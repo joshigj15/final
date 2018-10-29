@@ -1,0 +1,30 @@
+<div *ngIf="selectedEvent">
+  <div class="container">
+    <h2>Event Details</h2>
+    <div class="card">
+      <div class="card-header">
+        <h3>{{selectedEvent.EventName}}</h3>
+        <span *ngIf="selectedEvent.EventVenue"> Address &nbsp;{{selectedEvent.EventVenue}} {{selectedEvent.Location}}</span>
+      </div>                   
+      <div class="card-body">
+        <div class="row">
+          <div class="col-sm-3"> 
+            <img class="img-rounded img-responsive" alt="Event Picture" src="{{selectedEvent.VendorProfileImage}}" width="100%"/>
+          </div>
+          <div class="col-sm-9">
+            <ul class="list-group">
+              <li class="list-group-item" *ngIf="selectedEvent.EventCategoryName">Event Category: {{selectedEvent.EventCategoryName}} </li>
+              <li class="list-group-item" *ngIf="selectedEvent.EventDateFullStr">Event starts on: {{selectedEvent.EventDateFullStr}}</li>
+              <li class="list-group-item" *ngIf="selectedEvent.EventEndDateFullStr">Closing Date: {{selectedEvent.EventEndDateFullStr}}</li>
+              <li class="list-group-item" *ngIf="selectedEvent.VendorContactNo">Vender Contact no:- {{selectedEvent.VendorContactNo}}</li>
+            </ul>
+          </div>
+        </div>      
+      </div>
+      <div class="card-footer">MadeBy &nbsp;
+        Techpapa Technologies pvt.Ltd
+        <a class="btn btn-danger" routerLink='/eventList'>Go Back</a>
+      </div>
+    </div>
+  </div>
+</div>
